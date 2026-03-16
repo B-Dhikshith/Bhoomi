@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bhoomi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<h2>Bhoomi</h2>
+</header>
+
+<!-- SIDEBAR MENU -->
+<nav id="sidebar">
+
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('brick')">Brick Calculation</a>
+<a onclick="showPage('steel')">Steel Calculation</a>
+<a onclick="showPage('cement')">Cement Calculation</a>
+<a onclick="showPage('concrete')">Concrete Mix</a>
+<a onclick="showPage('staircase')">Staircase</a>
+<a onclick="showPage('contact')">Contact</a>
+
+</nav>
+
+<div class="content">
+
+<!-- HOME PAGE -->
+<div id="home" class="page">
+
+<h1 class="welcome">Welcome</h1>
+
+<div class="materials">
+
+<div class="card coarse" onclick="showPage('coarseInfo')">
+<img src="coarse.jpg">
+<p>Coarse Aggregate</p>
+</div>
+
+<div class="card fine" onclick="showPage('fineInfo')">
+<img src="fine.jpg">
+<p>Fine Aggregate</p>
+</div>
+
+<div class="card cement" onclick="showPage('cementInfo')">
+<img src="cement.jpg">
+<p>Cement</p>
+</div>
+
+<div class="card steel" onclick="showPage('steelInfo')">
+<img src="steel.jpg">
+<p>Steel</p>
+</div>
+
+<div class="card brick" onclick="showPage('brickInfo')">
+<img src="brick.jpg">
+<p>Brick</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="brickInfo" class="page">
+
+<h1>BRICKS</h1>
+
+<p>
+Bricks are small rectangular building units used in construction to build walls,
+buildings, pavements, and other structures. They are one of the oldest and most
+commonly used construction materials. Bricks are mainly made from clay, but they
+can also be made from materials such as fly ash, concrete, or lime.
+</p>
+
+<p>
+In the manufacturing process, clay is first collected and cleaned to remove
+stones and impurities. Then it is mixed with water and moulded into the required
+brick shape. These moulded bricks are dried in the sun to remove moisture and
+later burnt in a kiln at a high temperature of about 1000°C. This burning
+process makes the bricks hard, strong, and durable.
+</p>
+
+<p>
+Bricks have been used for thousands of years in construction. Ancient
+civilizations like the Indus Valley Civilization used bricks to construct
+houses and cities. Famous ancient cities such as Mohenjo-daro and Harappa
+were built mainly with bricks, which shows how strong and reliable this
+material has been since ancient times.
+</p>
+
+<p>
+The main materials used in brick making include clay, sand, lime, iron oxide,
+and magnesia. Clay acts as the main binding material, sand helps prevent
+shrinkage, lime increases strength, iron oxide gives the brick its red colour,
+and magnesia can give a yellowish colour.
+</p>
+
+<p>
+Bricks are commonly used in the construction of walls, foundations, pillars,
+pavements, boundary walls, and sometimes in decorative architectural works.
+</p>
+
+<p>
+In India, the standard size of a brick is usually 19 cm × 9 cm × 9 cm. When mortar is added between the bricks during construction, the nominal size becomes 20 cm × 10 cm × 10 cm. The average weight of a brick is about 3 to 3.5 kilograms. Bricks are also classified into different types based on quality. First class bricks are the best quality bricks with smooth surfaces and high strength, and they are used for important construction works. Second class bricks are slightly irregular in shape and are usually used where plastering will be done. Third class bricks are weaker and are used for temporary structures, while fourth class bricks are overburnt and mostly used as broken pieces in road construction or filling work.
+</p>
+
+<p>
+A good quality brick should have uniform size and shape, sharp edges, and a hard surface. It should not have cracks and should produce a clear ringing sound when two bricks are struck together. Good bricks should also absorb less water; normally they should not absorb more than about 20% of their weight in water after being immersed for 24 hours. Bricks also have compressive strength, which generally ranges from about 3.5 N/mm² to 10 N/mm² depending on the quality.
+</p>
+
+<p>
+Several tests are conducted to check the quality of bricks. These include compressive strength test, water absorption test, efflorescence test, hardness test, soundness test, and impact test. Bricks have many advantages such as good compressive strength, durability, fire resistance, thermal insulation, and easy availability at a low cost. However, bricks also have some disadvantages such as heavier weight, higher construction time compared to blocks, and the need for more mortar joints.
+</p>
+
+<p>
+In masonry construction, the arrangement of bricks in a wall is called brick bonding. Common bonds used in construction include stretcher bond, header bond, English bond, and Flemish bond. Usually the thickness of the mortar joint between bricks is about 10 mm. For calculation purposes in civil engineering, approximately 500 standard bricks are required to construct one cubic meter of brick masonry.
+</p>
+
+<p>
+In simple words, a brick is a strong rectangular block made mainly from clay and used as a basic building material for constructing walls and different types of structures.
+</p>
+
+
+<br>
+
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="steelInfo" class="page">
+
+<h1>STEEL</h1>
+
+<p>
+Steel is one of the most important materials used in civil engineering and construction. It is a strong metal mainly made from iron with a small amount of carbon added to improve its strength and hardness. Steel is widely used in construction because it has high tensile strength, durability, and the ability to carry heavy loads. Unlike concrete, which is strong in compression but weak in tension, steel is very strong in tension. Because of this property, steel is commonly used together with concrete to form reinforced concrete structures.
+</p>
+
+<p>
+The manufacturing of steel involves extracting iron from iron ore and then processing it in large furnaces where carbon and other elements are added to obtain the required strength and properties. The molten steel is then shaped into different forms such as bars, rods, sheets, plates, and structural sections. In construction work, the most commonly used type of steel is reinforcement steel bars, also called TMT bars (Thermo Mechanically Treated bars). These bars are specially designed to provide strength and flexibility to concrete structures.
+</p>
+
+<p>
+Steel is used in many parts of construction. It is used as reinforcement in reinforced cement concrete structures such as beams, slabs, columns, and footings. In these structures, steel bars are placed inside the concrete to resist tensile forces and prevent cracks. Steel is also used in staircases where reinforcement bars are placed inside the concrete steps to support loads and provide stability. In foundations and footings, steel reinforcement helps the structure safely transfer loads to the soil.
+</p>
+
+<p>
+Apart from reinforced concrete structures, steel is also used in structural steel construction. In this type of construction, steel sections like I-beams, channels, angles, and plates are used to build the main framework of buildings, bridges, towers, and industrial structures. Steel is widely used in the construction of large buildings, warehouses, factories, stadiums, and bridges because it can carry heavy loads and span large distances.
+</p>
+
+<p>
+Steel is also used in many other construction components such as roof trusses, reinforcement in retaining walls, water tanks, dams, culverts, piles, and precast concrete members. In road construction, steel may be used in reinforcement for rigid pavements and bridge decks. In addition, steel is used to make construction tools, scaffolding pipes, formwork supports, nails, bolts, and binding wires.
+</p>
+
+<p>
+A good quality steel used in construction should have high strength, good ductility, durability, and resistance to corrosion. It should be able to bend without breaking and should form a strong bond with concrete. The most commonly used reinforcement bars in India are Fe415, Fe500, and Fe550 grades, which indicate the yield strength of the steel.
+</p>
+
+<p>
+Steel has many advantages in construction. It has very high tensile strength, long life, good flexibility, and the ability to resist earthquakes and heavy loads. Steel structures can also be fabricated and assembled quickly, which helps reduce construction time. However, steel also has some disadvantages. It can corrode or rust when exposed to moisture and air if not properly protected, and it can lose strength at very high temperatures.
+</p>
+
+<p>
+In simple words, steel is a very strong metal material used in construction mainly to provide tensile strength and support to structures such as beams, slabs, columns, foundations, bridges, and many other civil engineering works.
+</p>
+
+<br>
+
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="cementInfo" class="page">
+
+<h1>CEMENT</h1>
+
+<p>
+Cement is one of the most important materials used in civil engineering and construction. It is a fine grey powder that acts as a binding material to hold other construction materials together. When cement is mixed with water, sand, and aggregates, it forms a paste that hardens with time and becomes strong like stone. Because of this binding property, cement is widely used in making concrete and mortar for building structures.
+</p>
+
+<p>
+Cement is mainly made from raw materials such as limestone, clay, silica, alumina, and iron oxide. These materials are crushed and mixed in proper proportions and then heated in a rotary kiln at a very high temperature of about 1400–1500°C. During this process, a substance called clinker is formed. The clinker is then cooled and ground into a fine powder along with a small amount of gypsum to produce cement. The gypsum helps control the setting time of cement.
+</p>
+
+<p>
+Cement is used in many construction works. One of the main uses of cement is in making concrete, which is a mixture of cement, sand, aggregates, and water. Concrete is used to construct important structural components such as beams, slabs, columns, foundations, footings, and staircases. Cement is also used to prepare mortar, which is a mixture of cement, sand, and water used for brick masonry and plastering works. It helps in binding bricks or blocks together in walls.
+</p>
+
+<p>
+Cement is also used in plastering walls to give a smooth and protective surface. It is used in flooring works, tile fixing, pointing in masonry joints, and construction of pavements and roads. In large civil engineering projects, cement is used in the construction of dams, bridges, tunnels, retaining walls, culverts, water tanks, and irrigation structures. It is also used in precast concrete products such as pipes, poles, blocks, and panels.
+</p>
+
+<p>
+A good quality cement should have good strength, proper setting time, and fine texture. It should be free from lumps and should have a uniform grey color with a slight greenish shade. Cement should also have good binding properties and should develop sufficient strength after hardening. The initial setting time of cement is usually about 30 minutes, and the final setting time is about 10 hours.
+</p>
+
+<p>
+There are different types of cement used in construction. The most common type is Ordinary Portland Cement (OPC), which is widely used for general construction work. Portland Pozzolana Cement (PPC) is another type that contains pozzolanic materials and provides better durability. Rapid Hardening Cement is used when early strength is required. Other types include Low Heat Cement, Sulphate Resistant Cement, and White Cement, which are used for special purposes.
+</p>
+
+<p>
+Cement has many advantages in construction. It provides strong bonding between materials, gives high compressive strength, and can be easily moulded into different shapes when mixed with water. It is also widely available and suitable for different types of construction works. However, cement also has some disadvantages. It produces heat during hydration, it can develop cracks if not cured properly, and cement production can cause environmental pollution due to carbon dioxide emissions.
+</p>
+
+<p>
+In simple words, cement is a fine powder used as a binding material in construction to join bricks, sand, and aggregates together to form strong structures such as walls, beams, slabs, foundations, and many other civil engineering works.
+</p>
+
+<br>
+
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="fineInfo" class="page">
+
+<h1>FINE AGGREGATE</h1>
+
+<p>
+Fine aggregate is an important material used in civil engineering and construction. It mainly consists of sand or small particles of natural or manufactured materials. Fine aggregate is used along with cement and water to form mortar and along with cement, coarse aggregate, and water to form concrete. The main function of fine aggregate is to fill the voids between coarse aggregate particles and help in producing a dense and strong concrete or mortar.
+</p>
+
+<p>
+Fine aggregate is generally obtained from natural sources such as river beds, lakes, and crushed stones. River sand is one of the most commonly used fine aggregates in construction. Sometimes manufactured sand (M-sand) produced by crushing rocks is also used as an alternative to natural sand. The particles of fine aggregate are smaller than coarse aggregate and usually pass through a 4.75 mm sieve.
+</p>
+
+<p>
+Fine aggregate is used in many construction works. It is mainly used in the preparation of mortar for brick masonry, where it is mixed with cement and water to bind bricks together in walls. It is also used in plastering works to provide a smooth surface to walls and ceilings. In concrete preparation, fine aggregate fills the gaps between coarse aggregate particles and helps in improving the strength and workability of concrete. Fine aggregate is also used in flooring works, tile fixing, pointing in masonry joints, and in the construction of pavements and small structural elements.
+</p>
+
+<p>
+A good quality fine aggregate should be clean and free from impurities such as clay, silt, dust, organic matter, and salts. The particles should be hard, durable, and well graded. Proper grading of fine aggregate helps improve the strength and durability of concrete and mortar. The colour of good sand is usually light brown or grey, and it should not contain excessive moisture or harmful substances.
+</p>
+
+<p>
+Fine aggregate can be classified into different types based on its source and particle size. Natural sand obtained from rivers is called river sand. Sand obtained from sea shores is called sea sand, but it is generally not preferred in construction because it contains salts that can cause corrosion of steel reinforcement. Manufactured sand, also called M-sand, is produced by crushing hard rocks in machines and is commonly used as an alternative to natural sand. Pit sand obtained from soil pits is another type sometimes used in construction.
+</p>
+
+<p>
+Fine aggregate has many advantages in construction. It improves the strength and durability of concrete and mortar, fills the gaps between larger aggregate particles, and helps produce a smooth and workable mix. It also reduces the amount of cement required in the mix by filling voids effectively. However, fine aggregate can also have some disadvantages if it contains impurities such as clay or organic materials, which can reduce the strength of concrete. Excessive moisture or poor grading of sand can also affect the quality of construction.
+</p>
+
+<p>
+In simple words, fine aggregate is sand or small granular material used in construction to mix with cement and water to form mortar and concrete, helping to bind materials together and improve the strength and stability of structures.
+</p>
+
+<br>
+
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="coarseInfo" class="page">
+
+<h1>COARSE AGGREGATE</h1>
+
+<p>
+Coarse aggregate is an important construction material used in civil engineering, mainly in the preparation of concrete. It consists of larger particles of crushed stone, gravel, or broken rock. These particles are bigger than fine aggregate and usually do not pass through a 4.75 mm sieve. Coarse aggregate forms the main bulk of concrete and provides strength, stability, and durability to the structure.
+</p>
+
+<p>
+Coarse aggregate is generally obtained by crushing hard rocks such as granite, basalt, limestone, or gravel in stone crushing machines. After crushing, the aggregates are sieved and separated into different sizes such as 10 mm, 20 mm, and 40 mm. Among these sizes, 20 mm aggregate is the most commonly used in building construction for preparing reinforced concrete.
+</p>
+
+<p>
+Coarse aggregate is widely used in many construction works. Its main use is in concrete, where it is mixed with cement, fine aggregate (sand), and water to produce strong concrete. This concrete is used to construct structural elements such as beams, slabs, columns, foundations, footings, and staircases. Coarse aggregate is also used in road construction, especially in rigid pavements and base layers. It is used in the construction of dams, bridges, retaining walls, culverts, and other large civil engineering structures. In addition, coarse aggregate is used in railway ballast, drainage works, and foundation layers to provide strength and stability.
+</p>
+
+<p>
+A good quality coarse aggregate should be hard, strong, and durable. It should be free from dust, clay, organic matter, and other impurities that can affect the strength of concrete. The particles should have a rough surface and angular shape so that they bond properly with cement paste. Proper grading of coarse aggregate is also important to ensure good workability and strength of concrete.
+</p>
+
+<p>
+Coarse aggregates are classified based on their size. Common sizes used in construction are 10 mm, 20 mm, and 40 mm aggregates. Smaller aggregates are generally used in slabs and beams, while larger aggregates may be used in mass concrete works such as foundations and dams.
+</p>
+
+<p>
+Coarse aggregate has many advantages in construction. It increases the compressive strength of concrete, reduces shrinkage, and improves the durability of structures. It also reduces the amount of cement required in concrete, making construction more economical. However, if the aggregate contains impurities or has improper size distribution, it can reduce the strength and quality of concrete.
+</p>
+
+<p>
+In simple words, coarse aggregate is a type of construction material made of larger stone particles that are mixed with cement, sand, and water to produce concrete, which is used to build strong structures such as beams, slabs, columns, foundations, roads, and bridges.
+</p>
+
+<br>
+
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<!-- BRICK CALCULATOR -->
+<div id="brick" class="page">
+
+<h2>Brick Calculator</h2>
+
+<h3>Wall Dimensions:</h3>
+
+<input type="number" id="L" placeholder="Length">
+<select id="Lu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<input type="number" id="B" placeholder="Breadth">
+<select id="Bu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<input type="number" id="H" placeholder="Height">
+<select id="Hu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<h3>Brick Dimensions:</h3>
+
+<input type="number" id="bl" placeholder="Brick Length">
+<select id="blu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<input type="number" id="bb" placeholder="Brick Breadth">
+<select id="bbu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<input type="number" id="bh" placeholder="Brick Height">
+<select id="bhu">
+<option value="1">Meter</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<br><br>
+
+<button onclick="calculateBricks()">Calculate</button>
+
+<div id="brickResult" class="result"></div>
+
+</div>
+
+<div id="steel" class="page">
+<h2>Steel Calculator</h2>
+<p>Coming Soon</p>
+</div>
+
+<div id="cement" class="page">
+<h2>Cement Calculator</h2>
+<p>Coming Soon</p>
+</div>
+
+<div id="concrete" class="page">
+<h2>Concrete Mix</h2>
+<p>Coming Soon</p>
+</div>
+
+<div id="staircase" class="page">
+
+<h2>Staircase Calculator</h2>
+
+<h3>Staircase Dimensions:</h3>
+
+<label>Height of Landing</label>
+<input type="number" id="height">
+<select id="heightUnit">
+<option value="1">Metre</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+<br>
+
+<label>Length of Landing</label>
+<input type="number" id="length">
+<select id="lengthUnit">
+<option value="1">Metre</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+<br>
+
+<label>Horizontal Distance</label>
+<input type="number" id="horizontal">
+<select id="horizontalUnit">
+<option value="1">Metre</option>
+<option value="0.01">Centimeter</option>
+<option value="0.3048">Feet</option>
+<option value="0.0254">Inch</option>
+</select>
+
+<br><br>
+
+<button onclick="calculateStaircase()">Calculate</button>
+
+<div id="stairResult" class="stairResult"></div>
+
+</div> 
+
+<div id="contact" class="page">
+<h2>Contact</h2>
+<p>Email: ab@gmail.com</p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

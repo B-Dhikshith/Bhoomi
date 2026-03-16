@@ -1,0 +1,257 @@
+body{
+margin:0;
+font-family:Arial;
+background:#f4f6f7;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+align-items:center;
+background:#2c3e50;
+color:white;
+padding:10px 20px;
+}
+
+.menu-btn{
+font-size:22px;
+background:none;
+border:none;
+color:white;
+margin-right:15px;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+
+#sidebar{
+position:fixed;
+left:-220px;
+top:0;
+width:220px;
+height:100%;
+background:#34495e;
+padding-top:60px;
+transition:0.3s;
+}
+
+#sidebar a{
+display:block;
+padding:12px;
+color:white;
+text-decoration:none;
+border-bottom:1px solid #555;
+cursor:pointer;
+}
+
+#sidebar a:hover{
+background:#2c3e50;
+}
+
+/* CONTENT */
+
+.content{
+padding:20px;
+}
+
+.page{
+display:none;
+}
+
+#home{
+display:block;
+}
+
+/* WELCOME */
+
+.welcome{
+text-align:center;
+margin-top:30px;
+font-size:32px;
+font-weight:bold;
+}
+
+/* MATERIAL GRID */
+
+.materials{
+display:grid;
+grid-template-columns:repeat(3,200px);
+grid-template-rows:repeat(3,180px);
+justify-content:center;
+gap:25px;
+margin-top:40px;
+}
+
+/* CARD STYLE */
+
+.card{
+text-align:center;
+background:white;
+padding:10px;
+border-radius:10px;
+box-shadow:0 3px 8px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:170px;
+height:120px;
+border-radius:8px;
+object-fit:cover;
+}
+
+.card p{
+margin-top:8px;
+font-weight:bold;
+}
+
+/* GRID POSITIONS */
+
+.coarse{
+grid-column:1;
+grid-row:1;
+}
+
+.fine{
+grid-column:3;
+grid-row:1;
+}
+
+.cement{
+grid-column:2;
+grid-row:2;
+}
+
+.steel{
+grid-column:1;
+grid-row:3;
+}
+
+.brick{
+grid-column:3;
+grid-row:3;
+}
+
+/* INPUT */
+
+input,select{
+padding:6px;
+margin:5px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+/* BUTTON */
+
+button{
+padding:8px 15px;
+background:#27ae60;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+button:hover{
+background:#1e8449;
+}
+
+/* RESULT */
+
+.result{
+margin-top:15px;
+font-size:20px;
+color:black;
+font-weight:bold;
+}
+
+/* UNIT TEXT */
+
+.unit{
+margin-left:5px;
+font-weight:bold;
+}
+
+/* STAIRCASE OUTPUT */
+
+.stairResult{
+margin-top:15px;
+font-size:18px;
+color:black;
+font-weight:bold;
+}
+
+.infoBox{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:20px;
+width:70%;
+max-width:700px;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+border-radius:8px;
+overflow:auto;
+max-height:80%;
+}
+
+.infoBox button{
+margin-top:10px;
+}
+
+#brickInfo{
+padding:40px;
+line-height:1.7;
+font-size:18px;
+}
+
+#steelInfo{
+padding:40px;
+line-height:1.7;
+font-size:18px;
+}
+
+#cementInfo{
+padding:40px;
+line-height:1.7;
+font-size:18px;
+}
+
+#fineInfo{
+padding:40px;
+line-height:1.7;
+font-size:18px;
+}
+
+#coarseInfo{
+padding:40px;
+line-height:1.7;
+font-size:18px;
+}
+
+/* PAGE FADE ANIMATION */
+
+.page{
+display:none;
+opacity:0;
+transition:opacity 0.6s ease;
+}
+
+.page.active{
+display:block;
+opacity:1;
+}
+
+/* Material cards animation */
+
+.card{
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+cursor:pointer;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 8px 18px rgba(0,0,0,0.3);
+}

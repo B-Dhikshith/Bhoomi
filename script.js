@@ -1,34 +1,42 @@
-function toggleMenu(){
-
+function toggleMenu()
+{
 let menu = document.getElementById("sidebar");
 
-if(menu.style.left == "0px")
-menu.style.left = "-220px";
+if(menu.style.left === "0px")
+{
+menu.style.left = "-250px";
+}
 else
+{
 menu.style.left = "0px";
-
+}
 }
 
+window.onload = function()
+{
+showPage('home');
+}
 
 function showPage(pageId)
 {
 let pages = document.querySelectorAll(".page");
 
-pages.forEach(function(page)
-{
+pages.forEach(function(page){
+page.style.display = "none";
 page.classList.remove("active");
-page.style.display="none";
 });
 
 let selected = document.getElementById(pageId);
-
-selected.style.display="block";
+selected.style.display = "block";
 
 setTimeout(function(){
 selected.classList.add("active");
 },10);
-}
 
+/* close sidebar automatically */
+
+document.getElementById("sidebar").style.left = "-250px";
+}
 
 
 function calculateBricks(){

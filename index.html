@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<html>                                                                                                                                                                                                                                                       <!DOCTYPE html>
 <head>
 <title>Bhoomi</title>
 <link rel="stylesheet" href="style.css">
@@ -8,8 +7,11 @@
 <body>
 
 <header>
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-<h2>Bhoomi</h2>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <img src="logo.png" class="logo">
+
+    <h2>Bhoomi</h2>
 </header>
 
 <!-- SIDEBAR MENU -->
@@ -18,9 +20,22 @@
 <a onclick="showPage('home')">Home</a>
 <a onclick="showPage('brick')">Brick Calculation</a>
 <a onclick="showPage('steel')">Steel Calculation</a>
-<a onclick="showPage('cement')">Cement Calculation</a>
+
+<!-- CONCRETE WITH SUBMENU -->
+<a onclick="toggleSubMenu()">Concrete Calculation ▼</a>
+
+<div id="concreteSubmenu" class="submenu">
+    <a onclick="showPage('footing')">Footing</a>
+    <a onclick="showPage('column')">Column</a>
+    <a onclick="showPage('beam')">Beam</a>
+    <a onclick="showPage('slab')">Slab</a>
+    <a onclick="showPage('wall')">Wall</a>
+    <a onclick="showPage('floor')">Floor</a>
+</div>
+
 <a onclick="showPage('concrete')">Concrete Mix</a>
 <a onclick="showPage('staircase')">Staircase</a>
+<a onclick="showPage('iscodes')">IS Codes</a>
 <a onclick="showPage('contact')">Contact</a>
 
 </nav>
@@ -376,8 +391,8 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <h3>Staircase Dimensions:</h3>
 
 <label>Height of Landing</label>
-<input type="number" id="height">
-<select id="heightUnit">
+<input type="number" id="stairHeight">
+<select id="stairHeightUnit">
 <option value="1">Metre</option>
 <option value="0.01">Centimeter</option>
 <option value="0.3048">Feet</option>
@@ -386,8 +401,8 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <br>
 
 <label>Length of Landing</label>
-<input type="number" id="length">
-<select id="lengthUnit">
+<input type="number" id="stairLength">
+<select id="stairLengthUnit">
 <option value="1">Metre</option>
 <option value="0.01">Centimeter</option>
 <option value="0.3048">Feet</option>
@@ -396,8 +411,8 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <br>
 
 <label>Horizontal Distance</label>
-<input type="number" id="horizontal">
-<select id="horizontalUnit">
+<input type="number" id="stairHorizontal">
+<select id="stairHorizontalUnit">
 <option value="1">Metre</option>
 <option value="0.01">Centimeter</option>
 <option value="0.3048">Feet</option>
@@ -412,14 +427,337 @@ In simple words, coarse aggregate is a type of construction material made of lar
 
 </div> 
 
+<div id="footing" class="page">
+
+<h2>Footing Concrete Calculator</h2>
+
+<label>Shape:</label>
+<select id="shape" onchange="updateInputs()">
+    <option value="square">Square</option>
+    <option value="rectangular">Rectangular</option>
+    <option value="circular">Circular</option>
+</select>
+
+<div id="inputs"></div>
+
+<label>No. of Footings:</label>
+<input type="number" id="count">
+
+<label>Grade of Concrete:</label>
+<select id="grade" onchange="setMixRatio()">
+    <option value="1:2:4">M15</option>
+    <option value="1:1.5:3" selected>M20</option>
+    <option value="1:1:2">M25</option>
+</select>
+
+<label>Mix Ratio:</label>
+<input type="text" id="mixRatio">
+
+<br><br>
+
+<button onclick="calculateFooting()">Calculate</button>
+
+<div id="result" class="result"></div>
+
+<h3>3D Footing Concrete Calculator:</h3>
+
+<div id="canvas3d"></div>
+
+
+<div id="viewer3D" style="width:100%; height:300px; background:white;"></div>
+
+<br>
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="column" class="page">
+
+<h2>Column Concrete Calculator</h2>
+
+<label>Shape:</label>
+<select id="colShape" onchange="updateColumnInputs()">
+    <option value="rectangular">Rectangular</option>
+    <option value="square">Square</option>
+    <option value="circular">Circular</option>
+</select>
+
+<div id="columnInputs"></div>
+<!-- ✅ HEIGHT (FIXED - ALWAYS PRESENT) -->
+<label>Height:</label>
+<input type="number" id="colHeight">
+<select id="colHeightUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<label>No. of Columns:</label>
+<input type="number" id="colCount">
+
+<br>
+
+<label>Grade:</label>
+<select id="colGrade" onchange="setColumnMix()">
+    <option value="1:2:4">M15</option>
+    <option value="1:1.5:3" selected>M20</option>
+    <option value="1:1:2">M25</option>
+</select>
+
+<label>Mix Ratio:</label>
+<input type="text" id="colMix" value="1:1.5:3">
+
+<br><br>
+
+<button onclick="calculateColumn()">Calculate</button>
+
+<div id="colResult" class="result"></div>
+
+<h3>3D Column Concrete Calculator:</h3>
+
+<div id="column3D" style="width:100%; height:300px; background:white;"></div>
+
+<br>
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="beam" class="page">
+
+<h2>Beam Calculation</h2>
+
+<label>Shape:</label>
+<select id="beamShape" onchange="updateBeamInputs()">
+    <option value="rectangular">Rectangular</option>
+    <option value="square">Square</option>
+</select>
+
+<br>
+
+<!-- 🔥 IMPORTANT: dynamic inputs -->
+<div id="beamInputs"></div>
+
+<label>No. of Beams:</label>
+<input type="number" id="beamCount">
+
+<br>
+<label>Grade:</label>
+<select id="beamGrade" onchange="setBeamMix()">
+    <option value="1:2:4">M15</option>
+    <option value="1:1.5:3" selected>M20</option>
+    <option value="1:1:2">M25</option>
+</select>
+
+<label>Mix Ratio:</label>
+<input type="text" id="beamMix" value="1:1.5:3">
+
+<br>
+
+<button onclick="calculateBeam()">Calculate</button>
+
+<div id="beamResult" class="result"></div>
+
+<h3>3D Beam View:</h3>
+<div id="beam3D" style="width:100%; height:300px;"></div>
+
+<br>
+<button onclick="showPage('home')">Back</button>
+
+</div>
+
+<div id="slab" class="page">
+
+<h2>Slab Concrete Calculator</h2>
+
+<label>Type of Slab:</label>
+<select id="slabType">
+    <option value="oneway">One Way Slab</option>
+    <option value="twoway">Two Way Slab</option>
+</select>
+
+<label>Length:</label>
+<input type="number" id="slabLength">
+<select id="slabLengthUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<label>Breadth:</label>
+<input type="number" id="slabBreadth">
+<select id="slabBreadthUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<label>Thickness:</label>
+<input type="number" id="slabThickness">
+<select id="slabThicknessUnit">
+    <option value="1">Meter</option>
+    <option value="0.01" selected>Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<br>
+
+<label>No. of Slabs:</label>
+<input type="number" id="slabCount">
+
+<br>
+
+<label>Grade:</label>
+<select id="slabGrade" onchange="setSlabMix()">
+    <option value="1:2:4">M15</option>
+    <option value="1:1.5:3" selected>M20</option>
+    <option value="1:1:2">M25</option>
+</select>
+
+<label>Mix Ratio:</label>
+<input type="text" id="slabMix" value="1:1.5:3">
+
+<br>
+
+<button onclick="calculateSlab()">Calculate</button>
+
+<div id="slabResult" class="result"></div>
+
+<h3>3D Slab View:</h3>
+<div id="slab3D" style="width:100%; height:300px; background:white;"></div>
+
+<br>
+<button onclick="showPage('home')">Back</button>
+</div>
+
+<div id="wall" class="page">
+<h2>Wall Calculation</h2>
+<p>Coming Soon</p>
+<button onclick="showPage('home')">Back</button>
+</div>
+
+<div id="floor" class="page">
+<h2>Floor Calculation</h2>
+<p>Coming Soon</p>
+<button onclick="showPage('home')">Back</button>
+</div>
+
 <div id="contact" class="page">
-<h2>Contact</h2>
-<p>Email: ab@gmail.com</p>
+
+<div class="contact-box">
+
+<h2>Feedback</h2>
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Gmail">
+
+<textarea id="comment" placeholder="Comment"></textarea>
+
+<button onclick="sendMail()">Submit</button>
+
+<h3>Contact:</h3>
+
+<p><b>B.Dhikshith</b></p>
+
+<p>
+<a href="mailto:bonkurthidhikshith@gmail.com">
+bonkurthidhikshith@gmail.com
+</a>
+</p>
+
 </div>
 
 </div>
+
+<div id="iscodes" class="page">
+
+<h2>IS Codes</h2>
+
+<ul class="is-list">
+
+<li onclick="openPDF('is456')">
+IS 456:2000(plan & reinforced concrete)
+</li>
+
+<li onclick="openPDF('is800')">
+IS 800:2007 (steel structures)
+</li>
+
+<li onclick="openPDF('is875_3')">
+IS 875(part 3)-1987 (Design of loads )
+</li>
+
+<li onclick="openPDF('is875_4')">
+IS 875(part 4)-1987 (Design of loads )
+</li>
+
+<li onclick="openPDF('is875_5')">
+IS 857(part 5)-1987 (Design of loads )
+</li>
+
+<li onclick="openPDF('is1200_5')">
+IS 1200(part 5)-1987 (Methods of measurement)    
+</li>
+
+<li onclick="openPDF('is1343')">
+IS 1343:1980 (Prestressed Concrete)
+</li>
+
+<li onclick="openPDF('is1649')">
+IS 1649:1962 (Design of Flues & Chimneys)
+</li>
+
+<li onclick="openPDF('is1893 -1984')">
+IS 1893:1984 (Design of Earthquake resistant Structures)
+</li>
+
+<li onclick="openPDF('is10262(2009)_Guidelines for concrete mix design proportioning')">
+IS 10262:2009 (Concrete mix proportions)
+</li>
+
+<li onclick="openPDF('is5330')">
+IS 5330:1984 (Design of Anchor blocks for penstocks with expansion joints)
+</li>
+
+<li onclick="openPDF('is6056')">
+IS 6056:1970 (Design of Jointed wood poles for overhead Power & telecommunication lines)
+</li>
+
+<li onclick="openPDF('is6533_1')">
+IS 6533(part 1)-1989 (Design of steel chimney)
+</li>
+
+<li onclick="openPDF('is6533_2')">
+IS 6533(part 2)-1989 (Design of steel chimney)
+</li>
+
+</ul>
+
+</div>
+<div id="pdfPage" class="page">
+
+<h2>PDF View</h2>
+
+<iframe id="pdfViewer" width="100%" height="400px"></iframe>
+
+<br><br>
+
+<button onclick="zoomPDF()">Zoom</button>
+<button onclick="showPage('iscodes')">Back</button>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
 
 <script src="script.js"></script>
+
 
 </body>
 </html>

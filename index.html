@@ -22,18 +22,21 @@
 <a onclick="showPage('steel')">Steel Calculation</a>
 
 <!-- CONCRETE WITH SUBMENU -->
-<a onclick="toggleSubMenu()">Concrete Calculation ▼</a>
+<a onclick="toggleSubMenu('concreteSubmenu')">Concrete Calculation ▼</a>
 
 <div id="concreteSubmenu" class="submenu">
     <a onclick="showPage('footing')">Footing</a>
     <a onclick="showPage('column')">Column</a>
     <a onclick="showPage('beam')">Beam</a>
     <a onclick="showPage('slab')">Slab</a>
-    <a onclick="showPage('wall')">Wall</a>
-    <a onclick="showPage('floor')">Floor</a>
 </div>
 
-<a onclick="showPage('concrete')">Concrete Mix</a>
+<a onclick="toggleSubMenu('cementSubmenu')">Cement Mortar ▼</a>
+<div id="cementSubmenu" class="submenu">
+    <a onclick="showPage('wall')">Wall</a>
+    <a onclick="showPage('plaster')">Plaster</a>
+</div>
+
 <a onclick="showPage('staircase')">Staircase</a>
 <a onclick="showPage('iscodes')">IS Codes</a>
 <a onclick="showPage('contact')">Contact</a>
@@ -375,12 +378,7 @@ In simple words, coarse aggregate is a type of construction material made of lar
 </div>
 
 <div id="cement" class="page">
-<h2>Cement Calculator</h2>
-<p>Coming Soon</p>
-</div>
-
-<div id="concrete" class="page">
-<h2>Concrete Mix</h2>
+<h2>Cement Mortar</h2>
 <p>Coming Soon</p>
 </div>
 
@@ -525,23 +523,42 @@ In simple words, coarse aggregate is a type of construction material made of lar
 
 <div id="beam" class="page">
 
-<h2>Beam Calculation</h2>
+<h2>Beam Concrete Calculator</h2>
 
-<label>Shape:</label>
-<select id="beamShape" onchange="updateBeamInputs()">
-    <option value="rectangular">Rectangular</option>
-    <option value="square">Square</option>
+<label>Length:</label>
+<input type="number" id="beamLength">
+<select id="beamLengthUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<label>Breadth:</label>
+<input type="number" id="beamBreadth">
+<select id="beamBreadthUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
+</select>
+
+<label>Depth:</label>
+<input type="number" id="beamDepth">
+<select id="beamDepthUnit">
+    <option value="1">Meter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="0.3048">Feet</option>
+    <option value="0.0254">Inch</option>
 </select>
 
 <br>
 
-<!-- 🔥 IMPORTANT: dynamic inputs -->
-<div id="beamInputs"></div>
-
 <label>No. of Beams:</label>
-<input type="number" id="beamCount">
+<input type="number" id="beamCount" value="1">
 
 <br>
+
 <label>Grade:</label>
 <select id="beamGrade" onchange="setBeamMix()">
     <option value="1:2:4">M15</option>
@@ -552,14 +569,15 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <label>Mix Ratio:</label>
 <input type="text" id="beamMix" value="1:1.5:3">
 
-<br>
+<br><br>
 
 <button onclick="calculateBeam()">Calculate</button>
 
 <div id="beamResult" class="result"></div>
 
-<h3>3D Beam View:</h3>
-<div id="beam3D" style="width:100%; height:300px;"></div>
+<h3>3D Beam Concrete Calculator:</h3>
+
+<div id="beam3D" style="width:100%; height:400px;"></div>
 
 <br>
 <button onclick="showPage('home')">Back</button>
@@ -569,12 +587,6 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <div id="slab" class="page">
 
 <h2>Slab Concrete Calculator</h2>
-
-<label>Type of Slab:</label>
-<select id="slabType">
-    <option value="oneway">One Way Slab</option>
-    <option value="twoway">Two Way Slab</option>
-</select>
 
 <label>Length:</label>
 <input type="number" id="slabLength">
@@ -603,11 +615,10 @@ In simple words, coarse aggregate is a type of construction material made of lar
     <option value="0.0254">Inch</option>
 </select>
 
-<br>
+
 
 <label>No. of Slabs:</label>
 <input type="number" id="slabCount">
-
 <br>
 
 <label>Grade:</label>
@@ -620,29 +631,169 @@ In simple words, coarse aggregate is a type of construction material made of lar
 <label>Mix Ratio:</label>
 <input type="text" id="slabMix" value="1:1.5:3">
 
-<br>
+<br><br>
 
 <button onclick="calculateSlab()">Calculate</button>
 
 <div id="slabResult" class="result"></div>
 
 <h3>3D Slab View:</h3>
-<div id="slab3D" style="width:100%; height:300px; background:white;"></div>
+<div id="slab3D" style="width:100%; height:300px;"></div>
 
 <br>
 <button onclick="showPage('home')">Back</button>
 </div>
 
-<div id="wall" class="page">
+<div id="wall" class="page" style="display:none;">
+
 <h2>Wall Calculation</h2>
-<p>Coming Soon</p>
+
+<div class="form-grid">
+
+    <!-- LEFT SIDE -->
+    <div>
+        <label>Length:</label>
+        <input type="number" id="wallL">
+    
+       
+        <select id="wallLUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Height:</label>
+        <input type="number" id="wallH">
+  
+        
+        <select id="wallHUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Thickness:</label>
+        <input type="number" id="wallT">
+    
+        
+        <select id="wallTUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+    <div>
+        <label>Grade:</label>
+        <select id="wallGrade" onchange="setWallMix()">
+            <option value="1:4">M15</option>
+            <option value="1:3" selected>M20</option>
+            <option value="1:5">M12</option>
+            <option value="1:6">M10</option>
+            <option value="1:8">M7.5</option>
+            <option value="1:10">M5</option>
+        </select>
+    
+    
+        <label>Mix Ratio:</label>
+        <input type="text" id="wallMix" value="1:3">
+    </div>
+
+</div>
+
+<br>
+<button onclick="calculateWall()">Calculate</button>
+<br><br>
+
+<div id="wallResult"></div>
+<br>
+
 <button onclick="showPage('home')">Back</button>
 </div>
 
-<div id="floor" class="page">
-<h2>Floor Calculation</h2>
-<p>Coming Soon</p>
+</div>
+
+<div id="plaster" class="page" style="display:none;">
+
+<h2>Plaster Calculation</h2>
+
+<div class="form-grid">
+
+    <div>
+        <label>Length:</label>
+        <input type="number" id="plasterL">
+   
+        <select id="plasterLUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Height:</label>
+        <input type="number" id="plasterH">
+    
+        <select id="plasterHUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Thickness:</label>
+        <input type="number" id="plasterT">
+    
+        <select id="plasterTUnit">
+            <option value="0.001">mm</option>
+            <option value="0.01">cm</option>
+            <option value="1">m</option>
+            <option value="0.0254">inch</option>
+            <option value="0.3048">feet</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Grade:</label>
+        <select id="plasterGrade" onchange="setPlasterMix()">
+            <option value="1:4">M15</option>
+            <option value="1:3" selected>M20</option>
+            <option value="1:5">M12</option>
+            <option value="1:6">M10</option>
+            <option value="1:8">M7.5</option>
+           
+        </select>
+        <label>Mix Ratio:</label>
+        <input type="text" id="plasterMix" value="1:3">
+    </div>
+
+</div>
+
+<br>
+<button onclick="calculatePlaster()">Calculate</button>
+<br><br>
+
+<div id="plasterResult">
+    
+<br>
+
 <button onclick="showPage('home')">Back</button>
+</div>
+
 </div>
 
 <div id="contact" class="page">
